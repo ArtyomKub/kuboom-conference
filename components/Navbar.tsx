@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import MobileNav from '@/components/MobileNav';
 
 const Navbar = () => {
     return (
@@ -16,7 +17,7 @@ const Navbar = () => {
                 <p className="text-[26px] font-extrabold text-white max-sm:hidden">Kuboom</p>
             </Link>
             <div className="flex-between gap-5">
-                MobileNav
+                <MobileNav/>
             </div>
         </nav>
     );
