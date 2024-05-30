@@ -1,8 +1,10 @@
 'use client'
 import React, {useState} from 'react';
 import HomeCard from '@/components/HomeCard';
+import {useRouter} from 'next/navigation';
 
 const MeetingTypeList = () => {
+    const router = useRouter();
     const [meetingState, setMeetingState] = useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>()
 
     return (
@@ -12,24 +14,28 @@ const MeetingTypeList = () => {
                 title="New Meeting"
                 descriptions="Start an instant meeting"
                 handleClick={() => setMeetingState('isJoiningMeeting')}
+                className = 'bg-orange-1'
             />
             <HomeCard
                 img="/icons/schedule.svg"
                 title="Schedule Meeting"
                 descriptions="Plan your meeting"
                 handleClick={() => setMeetingState('isScheduleMeeting')}
+                className = 'bg-blue-1'
+            />
+            <HomeCard
+                img="/icons/recordings.svg"
+                title="View Recordings"
+                descriptions="Check out your recordings"
+                handleClick={() => setMeetingState('isJoiningMeeting')}
+                className = 'bg-purple-1'
             />
             <HomeCard
                 img="/icons/add-meeting.svg"
                 title="New Meeting"
                 descriptions="Start an instant meeting"
-                handleClick={() => setMeetingState('isJoiningMeeting')}
-            />
-            <HomeCard
-                img="/icons/add-meeting.svg"
-                title="New Meeting"
-                descriptions="Start an instant meeting"
-                handleClick={() => setMeetingState('isJoiningMeeting')}
+                handleClick={() => router.push('/recordings')}
+                className = 'bg-yellow-1'
             />
         </section>
     );
