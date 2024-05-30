@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 
-const Layout = () => {
+const RootLayout = ({children}: { children: ReactNode }) => {
     return (
-        <div>
-
-        </div>
+        <main>
+            Navbar
+            {children}
+            Footer
+        </main>
     );
 };
 
-export default Layout;
+export default RootLayout;
