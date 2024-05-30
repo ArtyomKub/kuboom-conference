@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Meeting = ({params}: { params: { slug: string } }) => {
+const Meeting = ({params}: { params: { id: string } }) => {
     return (
         <div>
-            Meeting
+            Meeting Room: #{params.id}
         </div>
     );
 };
