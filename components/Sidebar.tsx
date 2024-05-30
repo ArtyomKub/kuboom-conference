@@ -4,6 +4,7 @@ import {sidebarLinks} from '@/constants';
 import {usePathname} from 'next/navigation';
 import Link from 'next/link';
 import {cn} from '@/lib/utils';
+import Image from 'next/image';
 
 
 const Sidebar = () => {
@@ -17,7 +18,15 @@ const Sidebar = () => {
                     return (
                         <Link href={link.route} key={link.label}
                               className={cn('flex gap-4 items-center p-4 rounded-lg justify-start', {'bg-blue-1': isActive})}>
-                            {link.label}
+                            <Image
+                                src={link.imgUrl}
+                                alt={link.label}
+                                width={24}
+                                height={24}
+                            />
+                            <p className="text-lg font-semibold max-lg:hidden">
+                                {link.label}
+                            </p>
                         </Link>
                     )
                 })}
