@@ -2,9 +2,9 @@ import React from 'react';
 
 const MobileNav = () => {
     return (
-        <div>
+        <section className="w-full max-w-[264px]">
             MobileNav
-        </div>
+        </section>
     );
 };
 
