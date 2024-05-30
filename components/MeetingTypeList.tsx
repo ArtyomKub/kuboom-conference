@@ -13,9 +13,24 @@ const MeetingTypeList = () => {
                 descriptions="Start an instant meeting"
                 handleClick={() => setMeetingState('isJoiningMeeting')}
             />
-            <HomeCard/>
-            <HomeCard/>
-            <HomeCard/>
+            <HomeCard
+                img="/icons/schedule.svg"
+                title="Schedule Meeting"
+                descriptions="Plan your meeting"
+                handleClick={() => setMeetingState('isScheduleMeeting')}
+            />
+            <HomeCard
+                img="/icons/add-meeting.svg"
+                title="New Meeting"
+                descriptions="Start an instant meeting"
+                handleClick={() => setMeetingState('isJoiningMeeting')}
+            />
+            <HomeCard
+                img="/icons/add-meeting.svg"
+                title="New Meeting"
+                descriptions="Start an instant meeting"
+                handleClick={() => setMeetingState('isJoiningMeeting')}
+            />
         </section>
     );
 };
