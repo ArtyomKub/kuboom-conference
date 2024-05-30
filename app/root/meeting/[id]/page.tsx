@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Meeting = () => {
+const Meeting = ({params}: { params: { slug: string } }) => {
     return (
         <div>
             Meeting
