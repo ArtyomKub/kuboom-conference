@@ -6,7 +6,8 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog"
+} from '@/components/ui/dialog'
+import Image from 'next/image';
 
 
 interface MeetingModalProps {
@@ -32,16 +33,16 @@ const MeetingModal = ({
                           buttonIcon
                       }: MeetingModalProps) => {
     return (
-        <Dialog>
-            <DialogTrigger>Open</DialogTrigger>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Are you absolutely sure?</DialogTitle>
-                    <DialogDescription>
-                        This action cannot be undone. This will permanently delete your account
-                        and remove your data from our servers.
-                    </DialogDescription>
-                </DialogHeader>
+        <Dialog open={isOpen} onOpenChange={onClose}>
+            <DialogContent
+                className="flex w-full max-w-[520px] flex-col gap-6 border-none bg-dark-1 px-6 py-9 text-white">
+                <div className="flex flex-col gap-6">
+                    {image && (
+                        <div>
+                            <Image src={image} alt={'image'} width={72} height={72}/>
+                        </div>
+                    )}
+                </div>
             </DialogContent>
         </Dialog>
 
