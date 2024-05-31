@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import HomeCard from '@/components/HomeCard';
 import {useRouter} from 'next/navigation';
+import MeetingModal from '@/components/MeetingModal';
 
 const MeetingTypeList = () => {
     const router = useRouter();
@@ -37,6 +38,7 @@ const MeetingTypeList = () => {
                 handleClick={() => setMeetingState('isJoiningMeeting')}
                 className = 'bg-yellow-1'
             />
+            <MeetingModal/>
         </section>
     );
 };
