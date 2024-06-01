@@ -5,6 +5,9 @@ import {ClerkProvider} from '@clerk/nextjs';
 import React from 'react';
 import '@stream-io/video-react-sdk/dist/css/styles.css'
 import { Toaster } from "@/components/ui/toaster"
+import 'react-datepicker/dist/react-datepicker.css'
+
+
 
 const inter = Inter({subsets: ['latin']});
 

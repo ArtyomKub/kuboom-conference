@@ -10,7 +10,6 @@ import {Textarea} from '@/components/ui/textarea';
 import ReactDatePicker from 'react-datepicker';
 
 
-
 const MeetingTypeList = () => {
     const router = useRouter();
     const [meetingState, setMeetingState] = useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>()
@@ -60,6 +59,8 @@ const MeetingTypeList = () => {
             toast({title: 'Failed to create meeting'})
         }
     }
+
+    const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`
 
     return (
         <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -112,7 +113,16 @@ const MeetingTypeList = () => {
                         <label className="text-base text-normal leading-[22px] text-sky-2">
                             Select Date and Time
                         </label>
-                        <ReactDatePicker/>
+                        <ReactDatePicker
+                            selected={values.dateTime}
+                            onChange={(date) => setValues({...values, dateTime: date!})}
+                            showTimeSelect
+                            timeFormat="HH:mm"
+                            timeIntervals={15}
+                            timeCaption="time"
+                            dateFormat="MMMM d, yyyy h:mm aa"
+                            className="w-full rounded bg-dark-3 p-2 focus:outline-none"
+                        />
                     </div>
 
                 </MeetingModal>
@@ -124,11 +134,11 @@ const MeetingTypeList = () => {
                     title="Meeting Created"
                     className="text-center"
                     handleClick={() => {
-                        // navigator.clipboard.writeText(meetingLink)
-                        // toast({title:'Link copied'})
+                        navigator.clipboard.writeText(meetingLink)
+                        toast({title:'Link copied'})
                     }}
                     image="/icons/checked.svg"
-                    buttonIcon="/icon/copy.svg"
+                    buttonIcon="/icons/copy.svg"
                     buttonText="Copy Meeting Link"
                 />
             )}
