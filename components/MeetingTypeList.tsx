@@ -101,7 +101,10 @@ const MeetingTypeList = () => {
                         <label className="text-base text-normal leading-[22px] text-sky-2">
                             Add a description
                         </label>
-                        <Textarea className={}/>
+                        <Textarea className='border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0'
+                        onChange={(e)=>{
+                            setValues({...values, description: e.target.value})
+                        }}/>
                     </div>
 
 
