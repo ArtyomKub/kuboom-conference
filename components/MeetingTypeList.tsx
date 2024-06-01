@@ -13,7 +13,6 @@ import ReactDatePicker from 'react-datepicker';
 const MeetingTypeList = () => {
     const router = useRouter();
     const [meetingState, setMeetingState] = useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>()
-
     const {user} = useUser();
     const client = useStreamVideoClient();
     const [values, setValues] = useState({
@@ -23,10 +22,8 @@ const MeetingTypeList = () => {
     })
     const [callDetails, setCallDetails] = useState<Call>()
     const {toast} = useToast()
-
     const createMeeting = async () => {
         if (!client || !user) return;
-
         try {
             if (!values.dateTime) {
                 toast({title: 'Please select a date and time'})
@@ -135,7 +132,7 @@ const MeetingTypeList = () => {
                     className="text-center"
                     handleClick={() => {
                         navigator.clipboard.writeText(meetingLink)
-                        toast({title:'Link copied'})
+                        toast({title: 'Link copied'})
                     }}
                     image="/icons/checked.svg"
                     buttonIcon="/icons/copy.svg"
