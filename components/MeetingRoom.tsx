@@ -50,7 +50,6 @@ const MeetingRoom = () => {
                         </DropdownMenuTrigger>
                     </div>
                     <DropdownMenuContent className="border-dark-1 bg-dark-1 text-white">
-                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator/>
                     </DropdownMenuContent>
                 </DropdownMenu>
