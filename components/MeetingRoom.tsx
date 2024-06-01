@@ -4,7 +4,7 @@ import {
     CallParticipantsList,
     CallStatsButton,
     PaginatedGridLayout,
-    SpeakerLayout
+    SpeakerLayout, useCallStateHooks
 } from '@stream-io/video-react-sdk';
 import {cn} from '@/lib/utils';
 import {
@@ -23,12 +23,13 @@ import EndCallButton from '@/components/EndCallButton';
 type CallLayoutType = 'grid' | 'speaker-left' | 'speaker-right'
 
 
-
 const MeetingRoom = () => {
     const searchParams = useSearchParams();
     const isPersonalRoom = !!searchParams.get('personal')
     const [layout, setLayout] = useState<CallLayoutType>('speaker-left')
     const [showParticipants, setShowParticipants] = useState(false)
+    const {useCallCallingState} = useCallStateHooks();
+    const callingState = useCallCallingState();
 
     const CallLayout = () => {
         switch (layout) {
