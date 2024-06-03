@@ -5,7 +5,7 @@ import type {Metadata} from 'next';
 
 export const metadata: Metadata = {
     title: 'KUBOOM',
-    description: 'Video calling app',
+    description: 'A workspace for your team, powered by Stream Chat and Clerk.',
     icons: {
         icon: '/icon/logo.svg'
     }
