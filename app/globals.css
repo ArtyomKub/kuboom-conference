@@ -18,7 +18,7 @@
 }
 
 .str-video__participant-details {
-    color: white;
+    color: #dff9ba;
 }
 
 .str-video__menu-container {
@@ -30,10 +30,10 @@
 }
 
 .str-video__participant-list {
-    background-color: #1c1f2e;
+    background-color: #dff9ba;
     padding: 10px;
     border-radius: 10px;
-    color: white;
+    color: black;
     height: 100%;
 }
 
@@ -53,6 +53,10 @@
     -webkit-backdrop-filter: blur(8px);
 }
 
+.cl-providerIcon__github {
+    filter: invert(1);
+}
+
 .cl-userButtonPopoverActionButtonIcon {
     color: white;
 }
@@ -62,7 +66,7 @@
 }
 
 .cl-dividerLine {
-    background: #252a41;
+    background: #006241;
     height: 2px;
 }
 
